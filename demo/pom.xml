@@ -27,6 +27,33 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Spring Boot Starter Data JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- MySQL Connector Java for MySQL database interaction -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<!-- Validation API for annotations like @NotNull, @Size, etc. -->
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+		</dependency>
+
+		<!-- Jakarta Persistence API for JPA annotations like @Entity, @Id -->
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+		</dependency>
+
 		<!-- Spring Boot Starter Test for testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
