@@ -1,0 +1,43 @@
+
+# Node.js (Vue.js)
+node_modules/
+dist/
+.env             # Variables d'environnement sensibles (API keys, etc.)
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+
+# IDE and editor files
+.vscode/
+.bluej/          # Fichiers spécifiques à BlueJ
+*.class          # Fichiers compilés Java
+
+# Java Spring Boot (Maven ou Gradle)
+target/          # Répertoire de build Maven ou Gradle
+*.log            # Fichiers de logs
+*.jar            # Fichiers JAR générés
+*.war            # Fichiers WAR générés
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# MySQL
+*.sql            # Scripts SQL (si non nécessaires dans le projet)
+*.sqlite         # Fichiers SQLite
+db_data/         # Volume de données Docker MySQL (si volume monté localement)
+
+# Framework CSS (Bootstrap + Tailwind CSS)
+public/css/tailwind.css   # Si tu génères un fichier CSS compilé pour Tailwind
+
+# Miscellaneous
+.env.local       # Variables d'environnement locales
+.env.production  # Variables d'environnement pour la prod
+.env.test        # Variables d'environnement pour les tests
+coverage/        # Répertoire de couverture des tests (si tu utilises des outils comme Jest)
