@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping("/api")
 public class TaskController {
     @Autowired
     private TaskService taskService;
@@ -19,22 +19,25 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
-    @GetMapping("/{id}")
-    public Task getTaskById(@PathVariable Long id) {
-        return taskService.getTaskById(id);
+    @GetMapping("/tasks/{id}")
+    public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
+        Task task = taskService.getTaskById(id);
+        return ResponseEntity.ok(task);
     }
 
-    @PostMapping
+    @PostMapping("/tasks")
     public Task createTask(@RequestBody Task task) {
         return taskService.createTask(task);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/tasks/{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task task) {
         return taskService.updateTask(id, task);
     }
 
-    @DeleteMapping("/{id}")
+
+
+    @DeleteMapping("/tasks/{id}")
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
     }
@@ -44,7 +47,7 @@ public class TaskController {
         taskService.deleteAllTasks();
     }
 
-    @DeleteMapping("/reset")
+    @DeleteMapping("/tasks/reset")
     public ResponseEntity<Void> resetDatabase() {
         taskService.resetDatabase();
         return ResponseEntity.ok().build();
