@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.exception.TaskNotFoundException;
 import com.example.demo.model.Task;
 import com.example.demo.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +23,15 @@ public class TaskService {
     }
 
     public Task createTask(Task task) {
-
-
         return taskRepository.save(task);
     }
 
     public Task updateTask(Long id, Task task) {
-        // Logique pour mettre à jour une tâche
         return taskRepository.save(task);
+    }
+
+    public Task getTaskById(Long id) {
+        return taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
     }
 
     public void deleteTask(Long id) {
